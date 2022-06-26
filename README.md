@@ -10,6 +10,12 @@
 ### Usage
 
 ### Example run
-1. `cd src/acCRISPR`
-2. `cp ../../example_data/*.tab .`
-3. `./run_acCRISPR.py --counts pH3_counts_final.tab --replicate_info pH3_rep_file.tab --cov 6 --significance 2-tailed --output_prefix test_run`
+
+Navigate to directory containing source code files: `cd src/acCRISPR`
+
+Copy test input files into this directory: `cp ../../example_data/*.tab .`
+
+Finally, run acCRISPR using the following command:
+```bash
+./run_acCRISPR.py --counts pH3_counts_final.tab --replicate_info pH3_rep_file.tab --cov 6 --significance 2-tailed --output_prefix test_run
+```
