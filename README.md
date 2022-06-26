@@ -3,7 +3,7 @@
 ### About 
 
 ### Installation
-1. `git clone `
+1. `git clone https://github.com/ianwheeldon/acCRISPR.git`
 2. `cd acCRISPR`
 3. `pip install .`
 
