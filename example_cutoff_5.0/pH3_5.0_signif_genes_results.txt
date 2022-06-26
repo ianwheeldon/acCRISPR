@@ -1,0 +1,3 @@
+Significant genes = 652
+Average coverage of the CS-corrected library = 2.441685765215177
+ac-coefficient = 12.208428826075885

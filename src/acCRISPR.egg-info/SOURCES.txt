@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/acCRISPR/CS_FS_guide.py
+src/acCRISPR/CS_corr_lib.py
+src/acCRISPR/FS_gene_calc.py
+src/acCRISPR/FS_to_p_val.py
+src/acCRISPR/__init__.py
+src/acCRISPR/ac_CRISPR.py
+src/acCRISPR/run_acCRISPR.py
+src/acCRISPR.egg-info/PKG-INFO
+src/acCRISPR.egg-info/SOURCES.txt
+src/acCRISPR.egg-info/dependency_links.txt
+src/acCRISPR.egg-info/requires.txt
+src/acCRISPR.egg-info/top_level.txt

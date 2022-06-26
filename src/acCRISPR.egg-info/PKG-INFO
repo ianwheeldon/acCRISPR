@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: acCRISPR
+Version: 1.0.0
+Summary: Identification of essential genes by sgRNA activity-correction from CRISPR screening data
+Author-email: Varun Trivedi <vtriv002@ucr.edu>
+Project-URL: Homepage, https://github.com/ianwheeldon/acCRISPR
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## acCRISPR: an activity-correction method for improving CRISPR screen accuracy
+
+For details on usage and installation, visit https://github.com/ianwheeldon/acCRISPR.

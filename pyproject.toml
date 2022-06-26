@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acCRISPR"
+version = "1.0.0"
+authors = [
+  { name="Varun Trivedi", email="vtriv002@ucr.edu" },
+]
+description = "Identification of essential genes by sgRNA activity-correction from CRISPR screening data"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering :: Bio-Informatics"
+]
+dependencies = ["numpy >=1.18.1","matplotlib >=3.4.2"]
+
+[project.urls]
+"Homepage" = "https://github.com/ianwheeldon/acCRISPR"
