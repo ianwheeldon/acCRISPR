@@ -1,8 +1,11 @@
 # acCRISPR: an activity-correction method for improving CRISPR screen accuracy
 
-acCRISPR is a tool developed in Python 3 for analyzing genome-wide CRISPR screens to identify essential genes for growth as well as gain- and loss-of-function hits for stress tolerance by removing low-activity sgRNA based on an activity cutoff. acCRISPR optimizes library activity and coverage to improve hit calling and screen accuracy, and can be implemented on any desktop computer running macOS or Linux.
+acCRISPR is a tool developed in Python 3 for analyzing genome-wide CRISPR screens to identify essential genes for growth as well as gain- and loss-of-function hits for stress tolerance by removing low-activity sgRNA based on an activity cutoff. acCRISPR optimizes library activity and coverage to improve hit calling and screen accuracy. 
 
-## Prerequisites
+## System requirements
+acCRISPR can be implemented on any desktop computer running macOS or Linux. The tool has been tested on Linux: Ubuntu 20.04.
+
+## Dependencies
 acCRISPR requires Python version 3.6 or higher and the following Python libraries to be installed:
 - `numpy (>=1.18.1)`
 - `scipy (>=1.4.1)`
@@ -15,7 +18,7 @@ Steps:
 2. Navigate to acCRISPR directory: `cd acCRISPR`
 3. Install the Python package: `pip install .`
 
-After executing the above steps, installation of the package can be confirmed by launching Python3 on the terminal and running `import acCRISPR`. If this results in no error, the package was installed correctly.
+Provided that all dependencies have already been installed, acCRISPR installation usually takes only about 1-2 mins. After executing the above steps, installation of the package can be confirmed by launching Python3 on the terminal and running `import acCRISPR`. If this results in no error, the package was installed correctly.
 
 ## Running acCRISPR on an example dataset
 
@@ -23,7 +26,7 @@ Navigate to the directory containing source code: `cd src/acCRISPR`
 
 Copy test input files into this directory: `cp ../../example_data/*.tab .`
 
-The example dataset used here is the pH 3 dataset from tolerance screening experiments in *Yarrowia lipolytica* using CRISPR-Cas9. acCRISPR can be run for the original/uncorrected sgRNA library using the following command:
+The example dataset used here is the pH 3 dataset from tolerance screening experiments in *Yarrowia lipolytica* using CRISPR-Cas9. acCRISPR can be run for the original/uncorrected sgRNA library using the following command (run time ~ 7-10 mins):
 ```
 python3 run_acCRISPR.py --counts pH3_counts_final.tab --replicate_info pH3_rep_file.tab --cov 6 --significance 2-tailed --output_prefix pH3_no_cutoff
 ```
