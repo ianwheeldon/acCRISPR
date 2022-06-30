@@ -38,11 +38,17 @@ The input files used in the above example can be found in the `example_data` dir
 
 For brief information on all input parameters to acCRISPR: `python3 run_acCRISPR.py -h`
 
-To run acCRISPR on the example pH 3 dataset with a CS-corrected library at a threshold of 5.0, the `--cutoff` parameter should be set to 5.0, as in the command below:
+If CS and FS of sgRNA have been pre-calculated, CS & FS (i.e., log2-fc) calculation can be skipped and the file containing CS & FS values can be provided directly as input to acCRISPR. In order to skip log2-fc calculation, the parameter `--skip_log2fc_calc` needs to be `True`.
+```
+python3 run_acCRISPR.py --skip_log2fc_calc --CS_FS_file CS_FS_values.tab --cov 6 --cutoff 5.0 --significance 2-tailed --output_prefix pH3_5.0
+```
+In the above command, the filename specified for the parameter `--CS_FS_file` (i.e., `CS_FS_values.tab`) should contain CS and FS values of sgRNA. This file should be in the same format as `pH3_no_cutoff_guide_CS_FS.tab` found in the directory `example_no_cutoff`.
+
+To run acCRISPR on the example pH 3 dataset with a CS-corrected library at a threshold of 5.0 & providing raw sgRNA counts as inputl, the `--cutoff` parameter should be set to 5.0, as in the command below:
 ```
 python3 run_acCRISPR.py --counts pH3_counts_final.tab --replicate_info pH3_rep_file.tab --cov 6 --cutoff 5.0 --significance 2-tailed --output_prefix pH3_5.0
 ```
-Alternatively, acCRISPR can be implemented for a corrected library by skipping CS & FS calculation from raw counts and providing CS & FS of sgRNA from the original/uncorrected library as input instead of the raw count file. For the given example dataset, once acCRISPR has been implemented with the uncorrected library, it generates a file named `pH3_no_cutoff_guide_CS_FS.tab`, which can be provided as input to generate results at a threshold of 5.0 using the `--CS_FS_file` parameter. In addition, the parameter `--skip_log2fc_calc` needs to be `True`.
+Alternatively, acCRISPR can be implemented for a corrected library by skipping CS & FS calculation from raw counts and providing CS & FS of sgRNA from the original/uncorrected library as input instead of the raw counts file. For the given example dataset, once acCRISPR has been implemented with the uncorrected library, it generates a file named `pH3_no_cutoff_guide_CS_FS.tab`, which can be provided as input to generate results at a threshold of 5.0 using the `--CS_FS_file` parameter. In addition, the parameter `--skip_log2fc_calc` needs to be `True`.
 ```
 python3 run_acCRISPR.py --skip_log2fc_calc --CS_FS_file pH3_no_cutoff_guide_CS_FS.tab --cov 6 --cutoff 5.0 --significance 2-tailed --output_prefix pH3_5.0
 ```
