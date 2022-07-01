@@ -22,6 +22,8 @@ Provided that all dependencies have already been installed, acCRISPR installatio
 
 ## Running acCRISPR on an example dataset
 
+*(Note: For the purposes of acCRISPR implementation, 'FS' denotes fitness score when analyzing growth screen data and tolerance score when analyzing stress tolerance screen data)*
+
 Navigate to the directory containing source code: `cd src/acCRISPR`
 
 Copy test input files into this directory: `cp ../../example_data/*.tab .`
