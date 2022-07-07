@@ -1,4 +1,4 @@
-# acCRISPR: an activity-correction method for improving CRISPR screen accuracy
+# acCRISPR: An activity-correction method for improving CRISPR screen accuracy
 
 acCRISPR is a tool developed in Python 3 for analyzing genome-wide CRISPR screens to identify essential genes for growth as well as gain- and loss-of-function hits for stress tolerance by removing low-activity sgRNA based on an activity cutoff. acCRISPR optimizes library activity and coverage to improve hit calling and screen accuracy. 
 
