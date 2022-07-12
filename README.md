@@ -68,4 +68,4 @@ acCRISPR provides the following output files:
 Output files obtained from runs on the example dataset with the uncorrected and corrected (threshold = 5.0) libraries can be found in `example_no_cutoff` and `example_cutoff_5.0` directories respectively.
 
 ## Scripts for library design and sequencing read processing
-Custom MATLAB scripts used for design of the CRISPR-Cas12a library in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found in `Library_design_and_read_counting`.
+Custom MATLAB scripts used for design of the CRISPR-Cas12a library in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found in `MATLAB_scripts_genome_wide_CRISPR_screens_Y_lipolytica`.
