@@ -18,7 +18,7 @@ Steps:
 2. Navigate to acCRISPR directory: `cd acCRISPR`
 3. Install the Python package: `pip install .`
 
-Provided that all dependencies have already been installed, acCRISPR installation usually takes only about 1-2 mins. After executing the above steps, installation of the package can be confirmed by launching Python3 on the terminal and running `import acCRISPR`. If this results in no error, the package was installed correctly.
+Provided all dependencies have already been installed, acCRISPR installation usually takes only about 1-2 mins. After executing the above steps, installation of the package can be confirmed by launching Python3 on the terminal and running `import acCRISPR`. If this results in no error, the package was installed correctly.
 
 ## Running acCRISPR on an example dataset
 
@@ -69,4 +69,4 @@ acCRISPR provides the following output files:
 Output files obtained from runs on the example dataset with the uncorrected and corrected (threshold = 5.0) libraries can be found in `example_no_cutoff` and `example_cutoff_5.0` directories respectively.
 
 ## Scripts for library design and sequencing read processing
-Custom MATLAB scripts that were used for the design of the CRISPR-Cas9 and -Cas12a libraries in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found within four separate subfolders in `MATLAB_scripts_genome_wide_CRISPR_screens_Y_lipolytica`. Each subfolder contains a detailed `instructions_for_use.txt` file that the user is encouraged to read before implementing the scripts.
+Custom MATLAB scripts that were used for the design of the CRISPR-Cas9 and -Cas12a libraries in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found within four separate subdirectories in `MATLAB_scripts_genome_wide_CRISPR_screens_Y_lipolytica`. Each subdirectory contains a detailed `instructions_for_use.txt` file that the user is encouraged to read before implementing the scripts.
