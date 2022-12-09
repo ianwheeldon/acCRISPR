@@ -20,19 +20,21 @@ Steps:
 
 Provided all dependencies have already been installed, acCRISPR installation usually takes only about 1-2 mins. After executing the above steps, installation of the package can be confirmed by launching Python3 on the terminal and running `import acCRISPR`. If this results in no error, the package was installed correctly.
 
-## Running acCRISPR on an example dataset
+## Running acCRISPR on example datasets
 
 *(Note: For the purposes of acCRISPR implementation, 'FS' denotes fitness score when analyzing growth screen data and tolerance score when analyzing stress tolerance screen data)*
 
 Navigate to the directory containing source code: `cd src/acCRISPR`
 
-Copy test input files into this directory: `cp ../../example_data/*.tab .`
+### Example 1: Implementation on the pH 3 dataset from *Yarrowia lipolytica* tolerance screens
 
-The example dataset used here is the pH 3 dataset from tolerance screening experiments in *Yarrowia lipolytica* using CRISPR-Cas9. acCRISPR can be run for the original/uncorrected sgRNA library using the following command (run time ~ 7-10 mins):
+Copy test input files into this directory: `cp ../../example_data/pH3/*.tab .`
+
+acCRISPR can be run for the original/uncorrected sgRNA library using the following command (run time ~ 7-10 mins):
 ```
 python3 run_acCRISPR.py --counts pH3_counts_final.tab --replicate_info pH3_rep_file.tab --cov 6 --significance 2-tailed --output_prefix pH3_no_cutoff
 ```
-The input files used in the above example can be found in the `example_data` directory.
+The input files used in the above example can be found in the `pH3` directory within `example_data`.
 
 - `--counts` is used to specify the file containing raw sgRNA counts for all replicates of each sample used in the screening experiment. The first and second columns specify the guide identifiers and associated gene names respectively, and the subsequent columns contain information on raw counts for each sgRNA in each sample replicate.
 - `--replicate_info` contains information for mapping replicates to samples. The names of replicates in this file and their order should exactly match the column headers (for replicates) and their order (from left to right) in the file specified by `--counts`. If different controls are used for determining CS & FS, this file should contain 4 unique sample names - `Control_CS`, `Treatment_CS`, `Control_FS` & `Treatment_FS`. However, if a common control sample is used for both CS & FS estimation, only 3 unique sample names are needed - `Control`, `Treatment_CS` & `Treatment_FS`.
@@ -43,9 +45,9 @@ For brief information on all input parameters to acCRISPR: `python3 run_acCRISPR
 
 If CS and FS of sgRNA have been pre-calculated, CS & FS (i.e., log2-fc) calculation can be skipped and the file containing CS & FS values can be provided directly as input to acCRISPR. In order to skip log2-fc calculation, the parameter `--skip_log2fc_calc` needs to be `True`.
 ```
-python3 run_acCRISPR.py --skip_log2fc_calc --CS_FS_file CS_FS_values.tab --cov 6 --cutoff 5.0 --significance 2-tailed --output_prefix pH3_5.0
+python3 run_acCRISPR.py --skip_log2fc_calc --CS_FS_file CS_FS_values.tab --cov 6 --significance 2-tailed --output_prefix pH3_no_cutoff
 ```
-In the above command, the filename specified for the parameter `--CS_FS_file` (i.e., `CS_FS_values.tab`) should contain CS and FS values of sgRNA. This file should be in the same format as `pH3_no_cutoff_guide_CS_FS.tab` found in the directory `example_no_cutoff`.
+In the above command, the filename specified for the parameter `--CS_FS_file` (i.e., `CS_FS_values.tab`) should contain CS and FS values of sgRNA. This file should be in the same format as `pH3_no_cutoff_guide_CS_FS.tab` found in the directory `pH3_no_cutoff` within `example_results`.
 
 To run acCRISPR on the example pH 3 dataset with a CS-corrected library at a threshold of 5.0 & providing raw sgRNA counts as inputl, the `--cutoff` parameter should be set to 5.0, as in the command below:
 ```
@@ -66,7 +68,7 @@ acCRISPR provides the following output files:
 
 <b><i>*Since the algorithm for hit identification by acCRISPR involves random sampling, the null distribution S.D. and hence, the p-values of genes and no. of significant genes would vary slightly with each run of the tool.</i></b>
 
-Output files obtained from runs on the example dataset with the uncorrected and corrected (threshold = 5.0) libraries can be found in `example_no_cutoff` and `example_cutoff_5.0` directories respectively.
+Output files obtained from runs on the example dataset with the uncorrected and corrected (threshold = 5.0) libraries can be found in `pH3_no_cutoff` and `pH3_cutoff_5.0` directories respectively (within the directory `example_results`).
 
 ## Scripts for library design and sequencing read processing
 Custom MATLAB scripts that were used for the design of the CRISPR-Cas9 and -Cas12a libraries in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found within four separate subdirectories in `MATLAB_scripts_genome_wide_CRISPR_screens_Y_lipolytica`. Each subdirectory contains a detailed `instructions_for_use.txt` file that the user is encouraged to read before implementing the scripts.
