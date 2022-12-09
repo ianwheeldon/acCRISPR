@@ -1,0 +1,13 @@
+Sample	Replicate
+Control_FS	P Rep #1
+Control_FS	P Rep #2
+Control_FS	P Rep #3
+Control_CS	PK Rep #1
+Control_CS	PK Rep #2
+Control_CS	PK Rep #3
+Treatment_FS	PC Rep #1
+Treatment_FS	PC Rep #2
+Treatment_FS	PC Rep #3
+Treatment_CS	PCK Rep #1
+Treatment_CS	PCK Rep #2
+Treatment_CS	PCK Rep #3
