@@ -1,3 +1,0 @@
-Significant genes = 1
-Average coverage of the library = 5.907181054239878
-ac-coefficient = N/A
