@@ -24,9 +24,11 @@ Provided all dependencies have already been installed, acCRISPR installation usu
 
 *(Note: For the purposes of acCRISPR implementation, 'FS' denotes fitness score when analyzing growth screen data and tolerance score when analyzing stress tolerance screen data)*
 
-Navigate to the directory containing source code: `cd src/acCRISPR`
+acCRISPR implementation on 3 example datasets has been demonstrated here.
 
 ### Example 1: Implementation on the pH 3 dataset from *Yarrowia lipolytica* tolerance screens
+
+Navigate to the directory containing source code: `cd src/acCRISPR`
 
 Copy test input files into this directory: `cp ../../example_data/pH3/*.tab .`
 
@@ -49,7 +51,7 @@ python3 run_acCRISPR.py --skip_log2fc_calc --CS_FS_file CS_FS_values.tab --cov 6
 ```
 In the above command, the filename specified for the parameter `--CS_FS_file` (i.e., `CS_FS_values.tab`) should contain CS and FS values of sgRNA. This file should be in the same format as `pH3_no_cutoff_guide_CS_FS.tab` found in the directory `pH3_no_cutoff` within `example_results`.
 
-To run acCRISPR on the example pH 3 dataset with a CS-corrected library at a threshold of 5.0 & providing raw sgRNA counts as inputl, the `--cutoff` parameter should be set to 5.0, as in the command below:
+To run acCRISPR on the example pH 3 dataset with a CS-corrected library at a threshold of 5.0 & providing raw sgRNA counts as input, the `--cutoff` parameter should be set to 5.0, as in the command below:
 ```
 python3 run_acCRISPR.py --counts pH3_counts_final.tab --replicate_info pH3_rep_file.tab --cov 6 --cutoff 5.0 --significance 2-tailed --output_prefix pH3_5.0
 ```
@@ -68,7 +70,36 @@ acCRISPR provides the following output files:
 
 <b><i>*Since the algorithm for hit identification by acCRISPR involves random sampling, the null distribution S.D. and hence, the p-values of genes and no. of significant genes would vary slightly with each run of the tool.</i></b>
 
-Output files obtained from runs on the example dataset with the uncorrected and corrected (threshold = 5.0) libraries can be found in `pH3_no_cutoff` and `pH3_cutoff_5.0` directories respectively (within the directory `example_results`).
+Output files obtained from runs on this example dataset with the uncorrected and corrected (threshold = 5.0) libraries can be found in `pH3_no_cutoff` and `pH3_cutoff_5.0` directories respectively (within the directory `example_results`).
+
+### Example 2: Implementation on the 1500 mM NaCl tolerance screening dataset from *Y. lipolytica*
+
+From the `acCRISPR` directory, navigate to the directory containing source code: `cd src/acCRISPR`
+
+Copy test input files into this directory: `cp ../../example_data/1500NaCl/*.tab .`
+
+To run acCRISPR on this dataset with a CS-corrected library at a threshold of 1.5, use the following command:
+```
+python3 run_acCRISPR.py --counts 1500NaCl_counts_final.tab --replicate_info 1500NaCl_rep_file.tab --cov 6 --cutoff 1.5 --significance 2-tailed --output_prefix 1500NaCl_1.5
+```
+
+Output files obtained from this run can be found in the `1500NaCl_cutoff_1.5` directory (within the directory `example_results`).
+
+### Example 3: Implementation on the Cas12a growth screening dataset from *Y. lipolytica*
+
+This dataset is used for essential gene identification and hence, a 1-tailed test will need to be performed in this case.
+
+From the `acCRISPR` directory, navigate to the directory containing source code: `cd src/acCRISPR`
+
+Copy test input files into this directory: `cp ../../example_data/Cas12a/*.tab .`
+
+To run acCRISPR on this dataset with a CS-corrected library at a threshold of 0.5, use the following command:
+```
+python3 run_acCRISPR.py --counts Cas12a_counts_final.tab --replicate_info Cas12a_rep_file.tab --cov 7 --cutoff 0.5 --output_prefix Cas12a_0.5
+```
+
+Output files obtained from this run can be found in the `Cas12a_cutoff_0.5` directory (within the directory `example_results`).
+
 
 ## Scripts for library design and sequencing read processing
 Custom MATLAB scripts that were used for the design of the CRISPR-Cas9 and -Cas12a libraries in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found within four separate subdirectories in `MATLAB_scripts_genome_wide_CRISPR_screens_Y_lipolytica`. Each subdirectory contains a detailed `instructions_for_use.txt` file that the user is encouraged to read before implementing the scripts.
