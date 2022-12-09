@@ -87,7 +87,7 @@ Output files obtained from this run can be found in the `1500NaCl_cutoff_1.5` di
 
 ### Example 3: Implementation on the Cas12a growth screening dataset from *Y. lipolytica*
 
-This dataset is used for essential gene identification and hence, a 1-tailed test will need to be performed in this case.
+The raw Cas12a library has an average coverage of 7, when rounded off to the nearest integer. This dataset is used for essential gene identification and hence, a 1-tailed test will need to be performed in this case.
 
 From the `acCRISPR` home directory, navigate to the directory containing source code: `cd src/acCRISPR`
 
