@@ -74,7 +74,7 @@ Output files obtained from runs on this example dataset with the uncorrected and
 
 ### Example 2: Implementation on the 1500 mM NaCl tolerance screening dataset from *Y. lipolytica*
 
-From the `acCRISPR` directory, navigate to the directory containing source code: `cd src/acCRISPR`
+From the `acCRISPR` home directory, navigate to the directory containing source code: `cd src/acCRISPR`
 
 Copy test input files into this directory: `cp ../../example_data/1500NaCl/*.tab .`
 
@@ -89,7 +89,7 @@ Output files obtained from this run can be found in the `1500NaCl_cutoff_1.5` di
 
 This dataset is used for essential gene identification and hence, a 1-tailed test will need to be performed in this case.
 
-From the `acCRISPR` directory, navigate to the directory containing source code: `cd src/acCRISPR`
+From the `acCRISPR` home directory, navigate to the directory containing source code: `cd src/acCRISPR`
 
 Copy test input files into this directory: `cp ../../example_data/Cas12a/*.tab .`
 
