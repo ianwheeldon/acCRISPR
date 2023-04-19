@@ -1,6 +1,6 @@
 # acCRISPR: An activity-correction method for improving CRISPR screen accuracy
 
-acCRISPR is a tool developed in Python 3 for analyzing genome-wide CRISPR screens to identify essential genes for growth as well as gain- and loss-of-function hits for stress tolerance by removing low-activity sgRNA based on an activity cutoff. acCRISPR optimizes library activity and coverage to improve hit calling and screen accuracy. 
+acCRISPR is a tool developed in Python 3 for analyzing genome-wide CRISPR screens to identify essential genes for growth as well as significant hits for stress tolerance by removing low-activity sgRNA based on an activity cutoff. acCRISPR optimizes library activity and coverage to improve hit calling and screen accuracy. 
 
 ## System requirements
 acCRISPR can be implemented on any desktop computer running macOS or Linux. The tool has been tested on Linux: Ubuntu 20.04.
@@ -24,7 +24,7 @@ Provided all dependencies have already been installed, acCRISPR installation usu
 
 *(Note: For the purposes of acCRISPR implementation, 'FS' denotes fitness score when analyzing growth screen data and tolerance score when analyzing stress tolerance screen data)*
 
-acCRISPR implementation on 3 example datasets has been demonstrated here.
+acCRISPR implementation on 3 example datasets has been demonstrated here. The first two examples, pertaining to analysis of stress tolerance screen data in *Yarrowia lipolytica*, have been provided for the purposes of testing the source code by users on an external sample dataset (pH 3 dataset in Example 1) and an internal dataset (1500mM NaCl dataset in Example 2). Example 3 (*Y. lipolytica* Cas12a growth screening dataset) is used to demonstrate the use of acCRISPR to perform essential gene analysis for a given screening dataset.
 
 ### Example 1: Implementation on the pH 3 dataset from *Yarrowia lipolytica* tolerance screens
 
@@ -78,7 +78,7 @@ From the `acCRISPR` home directory, navigate to the directory containing source 
 
 Copy test input files into this directory: `cp ../../example_data/1500NaCl/*.tab .`
 
-To run acCRISPR on this dataset with a CS-corrected library at a threshold of 1.5, use the following command:
+To run acCRISPR on this dataset with a CS-corrected library at a threshold of 1.5 & a 2-tailed test, use the following command:
 ```
 python3 run_acCRISPR.py --counts 1500NaCl_counts_final.tab --replicate_info 1500NaCl_rep_file.tab --cov 6 --cutoff 1.5 --significance 2-tailed --output_prefix 1500NaCl_1.5
 ```
