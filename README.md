@@ -103,3 +103,10 @@ Output files obtained from this run can be found in the `Cas12a_cutoff_0.5` dire
 
 ## Scripts for library design and sequencing read processing
 Custom MATLAB scripts that were used for the design of the CRISPR-Cas9 and -Cas12a libraries in *Y. lipolytica* and processing of Illumina sequencing reads to generate sgRNA abundance for both Cas9 and Cas12a screens can be found within four separate subdirectories in `MATLAB_scripts_genome_wide_CRISPR_screens_Y_lipolytica`. Each subdirectory contains a detailed `instructions_for_use.txt` file that the user is encouraged to read before implementing the scripts.
+
+
+
+## Citation
+If you use acCRISPR, please cite the following article:-
+
+Ramesh, A., Trivedi, V., Lee, S. et al. acCRISPR: an activity-correction method for improving the accuracy of CRISPR screens. Commun Biol 6, 617 (2023). https://doi.org/10.1038/s42003-023-04996-8
